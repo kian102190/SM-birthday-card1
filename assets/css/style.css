@@ -678,6 +678,18 @@ BALLOONS
 
 
 
+.balloons {
+  position: absolute;
+  left: 3%;
+  right: auto;
+  bottom: 0;
+  width: 30dvh;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 122;
+}
+
 @media (max-width: 820px) and (orientation: portrait) {
   .balloons {
     left: -2dvh;
@@ -685,6 +697,7 @@ BALLOONS
     width: 22dvh;
   }
 }
+
 
 
 
