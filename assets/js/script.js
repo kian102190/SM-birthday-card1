@@ -154,25 +154,28 @@ function popBalloon(balloon) {
   const cx = rect.left + rect.width / 2;
   const cy = rect.top + rect.height / 2;
 
-  // Freeze balloon exactly where it is
+  // Stop rise/float animation first
+  balloon.style.animation = "none";
+
+  // Freeze balloon exactly where it is on the screen
   balloon.style.position = "fixed";
   balloon.style.left = rect.left + "px";
   balloon.style.top = rect.top + "px";
+  balloon.style.right = "auto";
+  balloon.style.bottom = "auto";
   balloon.style.width = rect.width + "px";
   balloon.style.height = rect.height + "px";
-  balloon.style.marginLeft = "0";
+  balloon.style.margin = "0";
   balloon.style.transform = "none";
   balloon.style.zIndex = "9999";
-
-  // Stop rise/float animation
-  balloon.style.animation = "none";
+  balloon.style.pointerEvents = "none";
 
   spawnConfetti(cx, cy);
 
-  // force browser to apply animation reset
+  // Force browser to apply the reset before starting pop animation
   void balloon.offsetWidth;
 
-  // Play pop animation directly with inline style
+  // Play pop animation
   balloon.classList.add("popped");
   balloon.style.animation = "balloonPop 0.45s ease-out forwards";
 
