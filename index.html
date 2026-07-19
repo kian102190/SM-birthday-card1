@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>دعوت‌نامه تولد</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- ADDED: overlay + music -->
+    <div class="start-overlay" id="startOverlay">
+      <span>برای باز کردن دعوت‌نامه کلیک کنید ✨</span>
+    </div>
+    <audio
+      id="bgMusic"
+      src="assets/music/Majid Razavi - Tavalod-trimed.mp3"
+      loop
+      preload="auto"
+    ></audio>
+
+    <div class="invite" id="scene">
+      <!-- Dark overlay over background -->
+      <div class="photo-dark" id="photoDark"></div>
+
+      <!-- Envelope -->
+      <div class="envelope-wrapper" id="envelopeWrapper">
+        <div class="envelope-glow" id="envelopeGlow"></div>
+        <div class="envelope" id="envelope">
+          <div class="envelope-back"></div>
+
+          <div class="letter-slot"></div>
+
+          <div class="envelope-front"></div>
+
+          <div class="envelope-flap" id="flap"></div>
+        </div>
+      </div>
+      <img class="photo" src="assets/img/empty-card-small1.png" alt="عکس تولد" />
+
+      <!-- ADDED: lights layer (between photo and card, so it never covers the card) -->
+      <div class="lights" id="lights"></div>
+      <div class="balloons" id="balloons">
+        <div class="balloon gold"></div>
+        <div class="balloon cream"></div>
+        <div class="balloon burgundy"></div>
+        <div class="balloon white"></div>
+      </div>
+
+      <div class="card" id="inviteCard" style="width: 15dvh;">
+        <div class="flourish">❦ ✦ ❦</div>
+
+        <div class="title">شما دعوتید<br />به تولدم</div>
+
+        <div class="divider">🤎</div>
+
+        <div class="subtitle">با اومدنتون<br />ما رو خوشحال میکنین</div>
+
+        <div class="divider">•</div>
+
+        <div class="section">
+          <div class="label">📅 تاریخ تولدم</div>
+          <div class="value">۰۵/۰۵/۰۵</div>
+        </div>
+
+        <div class="divider">•</div>
+
+        <div class="section">
+          <div class="label">مکان</div>
+          <div class="value">📍 باغ شخصی</div>
+          <div class="coords">37.599171,45.039748</div>
+          <a
+            class="map-btn"
+            href="https://www.google.com/maps?q=37.599171,45.039748"
+            target="_blank">
+            کلیک برای نمایش موقعیت در نقشه
+          </a>
+        </div>
+
+        <div class="divider">•</div>
+
+        <div class="section">
+          <div class="label">🕐 از ساعت</div>
+          <div class="value">8</div>
+        </div>
+
+        <div class="flourish">❦ 🤎 ❦</div>
+      </div>
+    </div>
+
+    <!-- ADDED: script for lights + music -->
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
