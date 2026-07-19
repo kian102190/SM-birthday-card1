@@ -613,6 +613,19 @@ BALLOONS
     opacity: 0;
   }
 }
+/* balloon string */
+.balloon span {
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.35dvh;
+  height: 12dvh;
+  background: #777;
+  border-radius: 999px;
+  z-index: -1;
+}
+
 
 
 @media (max-width: 820px) and (orientation: portrait) {
