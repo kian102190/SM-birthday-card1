@@ -201,3 +201,25 @@ document.querySelectorAll(".balloon").forEach((balloon) => {
     }
   });
 });
+function spawnConfetti(cx, cy) {
+  for (let i = 0; i < 60; i++) {
+    const piece = document.createElement("div");
+    piece.className = "confetti";
+    piece.style.left = cx + "px";
+    piece.style.top = cy + "px";
+    piece.style.background =
+      confettiColors[Math.floor(Math.random() * confettiColors.length)];
+
+    // spread across the full viewport width and height
+    const dx = (Math.random() - 0.5) * window.innerWidth * 1.6;
+    const dy = Math.random() * window.innerHeight * 1.1;
+    piece.style.setProperty("--dx", dx + "px");
+    piece.style.setProperty("--dy", dy + "px");
+
+    piece.style.borderRadius = Math.random() > 0.5 ? "50%" : "0";
+    piece.style.animationDuration = 1.5 + Math.random() * 1.5 + "s";
+    document.body.appendChild(piece);
+    piece.addEventListener("animationend", () => piece.remove());
+  }
+}
+
