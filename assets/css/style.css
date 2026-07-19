@@ -514,111 +514,85 @@ BALLOONS
   will-change: transform, opacity;
 }
 
-}
-
 .balloon {
   position: absolute;
   width: 13dvh;
   height: 16dvh;
   border-radius: 50% 50% 48% 48%;
+  opacity: 0;
   animation: balloonRise 8s ease-out forwards,
              balloonFloat 4s ease-in-out infinite alternate;
 }
 
-
 /* shiny highlight */
-
 .balloon::before {
   content: "";
-
   position: absolute;
-
   width: 1.4dvh;
   height: 2.5dvh;
-
   left: 1.2dvh;
   top: 1.4dvh;
-
   background: rgba(255, 255, 255, 0.55);
-
   border-radius: 50%;
-
   transform: rotate(-25deg);
-
   filter: blur(0.1dvh);
 }
 
 /* knot */
-
 .balloon::after {
   content: "";
-
   position: absolute;
-
   bottom: -0.45dvh;
-
   left: 50%;
-
   transform: translateX(-50%);
-
   width: 0.8dvh;
   height: 0.8dvh;
-
   clip-path: polygon(50% 100%, 0 0, 100% 0);
-
   background: inherit;
 }
 
 /* string */
-
 .balloon span {
   position: absolute;
-
   top: 100%;
-
   left: 50%;
-
   width: 2px;
-
   height: 12dvh;
-
   background: #b9b9b9;
-
+  transform: translateX(-50%);
   transform-origin: top;
 }
 
 /* colors */
-
 .gold {
   background: linear-gradient(145deg, #ffe28b, #c89b2c);
-
   left: 1dvh;
   bottom: 0;
+  animation-delay: 0s, 0s;
 }
 
 .cream {
   background: linear-gradient(145deg, #fffef7, #ece4c8);
   left: 5dvh;
   bottom: 3dvh;
-  animation-delay: 0.2s, 4.2s; /* was 0.2s, 0.2s */
+  animation-delay: 0.2s, 4.2s;
 }
 
 .burgundy {
   background: linear-gradient(145deg, #a62a42, #681622);
   left: 8dvh;
   bottom: 1dvh;
-  animation-delay: 0.4s, 4.4s; /* was 0.4s, 0.4s */
+  animation-delay: 0.4s, 4.4s;
 }
 
 .white {
   background: linear-gradient(145deg, #ffffff, #e8e8e8);
   left: 6dvh;
   bottom: -3dvh;
-  animation-delay: 0.6s, 4.6s; /* was 0.6s, 0.6s */
+  animation-delay: 0.6s, 4.6s;
 }
 
 /* floating */
-
 @keyframes balloonRise {
   from {
     transform: translateY(70dvh);
@@ -635,22 +609,17 @@ BALLOONS
   }
 }
 
-
-
-
-
-
 @keyframes balloonFloat {
-  0%,
-  100% {
-    transform: translateY(-75dvh); /* matches the new rise endpoint */
+  0% {
+    margin-left: 0;
   }
-  50% {
-    transform: translateY(-79dvh); /* gentle 4dvh bob upward */
+  100% {
+    margin-left: 1dvh;
   }
 }
+
 .balloon.popped {
-  animation: balloonPop 0.3s ease forwards;
+  animation: balloonPop 0.3s ease forwards !important;
 }
 
 @keyframes balloonPop {
@@ -687,29 +656,8 @@ BALLOONS
   }
 }
 
-@keyframes balloonPop {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.4);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(0);
-    opacity: 0;
-  }
-}
-
-.popped {
-  animation: balloonPop 0.3s ease-out forwards !important;
-}
-
 /* ============================================================
    PHONE RESPONSIVENESS
-   Fill the complete visible phone viewport without scaling the
-   invitation down or leaving empty space above and below it.
 ============================================================ */
 @media (max-width: 820px) and (orientation: portrait) {
   .balloons {
@@ -718,7 +666,6 @@ BALLOONS
     width: 22dvh;
   }
 }
-
 
 
 
