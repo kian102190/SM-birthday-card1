@@ -505,28 +505,27 @@ BALLOONS
 .balloons {
   position: absolute;
   left: 3%;
-  bottom: 0; /* was -45dvh — balloons were stuck off-screen after rising */
+  bottom: 0;
   width: 30dvh;
   height: 80dvh;
   pointer-events: none;
   z-index: 122;
+
+  opacity: 0;
+  transform: translateY(100%);
+  will-change: transform, opacity;
+}
+
 }
 
 .balloon {
   position: absolute;
-  width: 13dvh; /* increased from 11dvh */
-  height: 16dvh; /* increased from 14dvh */
+  width: 13dvh;
+  height: 16dvh;
   border-radius: 50% 50% 48% 48%;
   opacity: 0;
-  animation:
-    balloonRise 4s ease forwards,
-    balloonFloat 4s ease-in-out 4s infinite;
-  animation-play-state: paused, paused;
-  box-shadow:
-    inset -0.7dvh -1.1dvh 1.8dvh rgba(0, 0, 0, 0.18),
-    inset 0.5dvh 0.7dvh 1.3dvh rgba(255, 255, 255, 0.45),
-    0 0.6dvh 1.6dvh rgba(0, 0, 0, 0.22);
 }
+
 
 /* shiny highlight */
 
@@ -623,19 +622,24 @@ BALLOONS
 
 @keyframes balloonRise {
   from {
-    transform: translateY(70dvh);
+    transform: translateY(100%);
     opacity: 0;
   }
+
   10% {
+    transform: translateY(0);
     opacity: 1;
   }
+
   to {
-    transform: translateY(
-      -75dvh
-    ); /* now rises much higher, almost to the top */
+    transform: translateY(-75dvh);
     opacity: 1;
   }
 }
+
+
+
+
 
 @keyframes balloonFloat {
   0%,
@@ -715,6 +719,9 @@ BALLOONS
     width: 22dvh;
   }
 }
+
+
+
 
 
 
