@@ -664,6 +664,17 @@ BALLOONS
     opacity: 0;
   }
 }
+.balloon,
+.confetti,
+.popped {
+  max-width: 100vw;
+}
+
+.confetti {
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+}
 
 
 
