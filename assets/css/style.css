@@ -510,9 +510,7 @@ BALLOONS
   height: 80dvh;
   pointer-events: none;
   z-index: 122;
-
-  opacity: 0;
-  transform: translateY(100%);
+  transform: translateY(0);
   will-change: transform, opacity;
 }
 
@@ -524,6 +522,8 @@ BALLOONS
   height: 16dvh;
   border-radius: 50% 50% 48% 48%;
   opacity: 0;
+  animation: balloonRise 8s ease-out forwards,
+             balloonFloat 4s ease-in-out infinite alternate;
 }
 
 
@@ -622,12 +622,11 @@ BALLOONS
 
 @keyframes balloonRise {
   from {
-    transform: translateY(100%);
+    transform: translateY(70dvh);
     opacity: 0;
   }
 
   10% {
-    transform: translateY(0);
     opacity: 1;
   }
 
@@ -636,6 +635,7 @@ BALLOONS
     opacity: 1;
   }
 }
+
 
 
 
@@ -719,7 +719,6 @@ BALLOONS
     width: 22dvh;
   }
 }
-
 
 
 
