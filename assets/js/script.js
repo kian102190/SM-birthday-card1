@@ -68,10 +68,12 @@ overlay.addEventListener("click", () => {
     envelope.classList.add("open");
 
     setTimeout(() => {
-      document.querySelectorAll(".balloon").forEach((balloon) => {
-        balloon.style.animationPlayState = "running, running";
-      });
-    }, 500);
+  document.querySelectorAll(".balloon").forEach((balloon) => {
+    balloon.style.opacity = "1";
+    balloon.style.animationPlayState = "running, running";
+  });
+}, 500);
+
 
     createSparkles();
     glow.style.opacity = "1";
