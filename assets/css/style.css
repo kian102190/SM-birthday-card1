@@ -530,6 +530,7 @@ BALLOONS
   animation-play-state: paused, paused;
 }
 
+
 .gold {
   background: linear-gradient(145deg, #ffe28b, #c89b2c);
   left: 1dvh;
@@ -557,6 +558,22 @@ BALLOONS
   bottom: -3dvh;
   animation-delay: 0.6s, 8.6s;
 }
+@keyframes balloonRise {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-65dvh);
+    opacity: 1;
+  }
+}
+
 
 @keyframes balloonPop {
   0% {
