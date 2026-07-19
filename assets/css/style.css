@@ -521,7 +521,6 @@ BALLOONS
   width: 13dvh;
   height: 16dvh;
   border-radius: 50% 50% 48% 48%;
-  opacity: 0;
   animation: balloonRise 8s ease-out forwards,
              balloonFloat 4s ease-in-out infinite alternate;
 }
