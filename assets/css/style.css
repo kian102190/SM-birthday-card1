@@ -502,6 +502,10 @@ body {
 BALLOONS
 =========================================*/
 
+/*=========================================
+BALLOONS
+=========================================*/
+
 .balloons {
   position: absolute;
   left: 3%;
@@ -510,8 +514,6 @@ BALLOONS
   height: 80dvh;
   pointer-events: none;
   z-index: 122;
-  transform: translateY(0);
-  will-change: transform, opacity;
 }
 
 .balloon {
@@ -520,8 +522,10 @@ BALLOONS
   height: 16dvh;
   border-radius: 50% 50% 48% 48%;
   opacity: 0;
-  animation: balloonRise 8s ease-out forwards,
-             balloonFloat 4s ease-in-out infinite alternate;
+  animation:
+    balloonRise 8s ease-out forwards,
+    balloonFloat 4s ease-in-out infinite;
+  animation-play-state: paused, paused;
 }
 
 /* shiny highlight */
@@ -568,31 +572,30 @@ BALLOONS
   background: linear-gradient(145deg, #ffe28b, #c89b2c);
   left: 1dvh;
   bottom: 0;
-  animation-delay: 0s, 0s;
+  animation-delay: 0s, 8s;
 }
 
 .cream {
   background: linear-gradient(145deg, #fffef7, #ece4c8);
   left: 5dvh;
   bottom: 3dvh;
-  animation-delay: 0.2s, 4.2s;
+  animation-delay: 0.2s, 8.2s;
 }
 
 .burgundy {
   background: linear-gradient(145deg, #a62a42, #681622);
   left: 8dvh;
   bottom: 1dvh;
-  animation-delay: 0.4s, 4.4s;
+  animation-delay: 0.4s, 8.4s;
 }
 
 .white {
   background: linear-gradient(145deg, #ffffff, #e8e8e8);
   left: 6dvh;
   bottom: -3dvh;
-  animation-delay: 0.6s, 4.6s;
+  animation-delay: 0.6s, 8.6s;
 }
 
-/* floating */
 @keyframes balloonRise {
   from {
     transform: translateY(70dvh);
@@ -613,13 +616,17 @@ BALLOONS
   0% {
     margin-left: 0;
   }
-  100% {
+  50% {
     margin-left: 1dvh;
+  }
+  100% {
+    margin-left: -1dvh;
   }
 }
 
-.balloon.popped {
-  animation: balloonPop 0.3s ease forwards !important;
+.balloon.popped,
+.popped {
+  animation: balloonPop 0.3s ease-out forwards !important;
 }
 
 @keyframes balloonPop {
@@ -656,9 +663,6 @@ BALLOONS
   }
 }
 
-/* ============================================================
-   PHONE RESPONSIVENESS
-============================================================ */
 @media (max-width: 820px) and (orientation: portrait) {
   .balloons {
     left: -4dvh;
@@ -666,6 +670,7 @@ BALLOONS
     width: 22dvh;
   }
 }
+
 
 
 
