@@ -558,21 +558,23 @@ BALLOONS
   animation-delay: 0.6s, 8.6s;
 }
 
-@keyframes balloonRise {
+@keyframes balloonPop {
   0% {
-    transform: translateY(70dvh);
-    opacity: 0;
+    transform: scale(1);
+    opacity: 1;
   }
 
-  10% {
+  45% {
+    transform: scale(1.35);
     opacity: 1;
   }
 
   100% {
-    transform: translateY(-65dvh);
-    opacity: 1;
+    transform: scale(0);
+    opacity: 0;
   }
 }
+
 
 
 @keyframes balloonFloatX {
