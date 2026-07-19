@@ -678,11 +678,10 @@ BALLOONS
 
 
 
-
 @media (max-width: 820px) and (orientation: portrait) {
   .balloons {
-    left: auto;
-    right: 0;
+    left: 3%;
+    right: auto;
     width: 22dvh;
   }
 }
