@@ -630,6 +630,25 @@ BALLOONS
   border-radius: 999px;
   z-index: -1;
 }
+.confetti {
+  position: absolute;
+  width: 1.2dvh;
+  height: 1.2dvh;
+  pointer-events: none;
+  animation: confettiFall 1.5s ease-out forwards;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx), var(--dy)) rotate(720deg);
+    opacity: 0;
+  }
+}
+
 
 
 
